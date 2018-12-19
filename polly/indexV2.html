@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+
+    <div id="content">
+
+      Voice:
+      <select id="voiceSelected">
+        <option value="Joanna">Joanna [English - Female - American Accent]</option>
+        <option value="Matthew">Matthew [English - Male - American Accent]</option>
+        <option value="Emma">Emma [English - Female - British Accent]</option>
+        <option value="Brian">Brian [English - Male - British Accent]</option>
+        <option value="Nicole">Nicole [English - Female - Australian Accent]</option>
+        <option value="Russell">Russell [English - Male - Australian Accent</option>
+        <option value="Raveena">Raveena [English - Female - Indian accent]</option>
+        <option value="Aditi">Aditi [English - Female - Indian accent]</option>
+        <option value="Aditi">Aditi [Hindi]</option>
+        <option value="Mathieu">Mathieu [French]</option>
+        <option value="Chantal">Chantal [French Canadian]</option>
+        <option value="Carla">Carla [Italian]</option>
+        <option value="Enrique">Enrique [Spanish]</option>
+        <option value="Cristiano">Cristiano [Portuquese]</option>
+        <option value="Hans">Hans [German]</option>
+        <option value="Lotte">Lotte [Dutch]</option>
+        <option value="Zhiyu">Zhiyu [Chinese, Mandarin]</option>
+        <option value="Filiz">Filiz [Turkish]</option>
+      </select>
+
+
+    <textarea id ="postText"></textarea>
+    <span id="charCounter">Characters: 0</span>
+	<input type="submit" value="Generate Text-To-Speech" id="sayButton" class="buttons">
+
+    </br></br>
+	<span id="postIDreturned"></span></br>
+    After generating - copy and paste the Post ID above ^ to get your file <input type="text" id="postId"> <input type="submit" class="buttons" value="Get File" id="searchButton">
+	</br></br>
+    </div>
+
+
+      <table id="posts">
+        <colgroup>
+          <col style="width:100%">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th></th>
+          </tr>
+        </tbody>
+      </table>
+
+
+    <script src="scriptsV2.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+  </body>
+</html>

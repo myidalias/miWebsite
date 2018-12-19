@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<meta name="description" content="Demo Project">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="css/stt.css">
+			<style type="text/css"></style>
+			<title>Speech-To-Text converter</title>
+			<body background="background.png">
+			<center><img src="https://blog.flamingtext.com/blog/2018/11/09/flamingtext_com_1541797418_799131671.png" border="0"></center>
+			
+			<style type="text/css">
+				body{
+					font-family: verdana;
+				}
+				#textBlock{
+					height:						13rem;
+					border: 					1px #ccc solid;
+					display: 					flex;
+					margin: 					2rem 0 0;
+					border-radius: 				1rem;
+					padding:					1rem;
+					font-size:					1rem;
+					line-height:				2rem;
+					background-color: 			white;
+				}
+				.btn {
+					background:	#ddd;
+					padding: 0.5rem 2rem;
+					border: 1px #ccc solid;
+					display: inline-block;
+					margin: 2rem 0 0;
+					border-radius: 50px;
+					text-decoration: none;
+					color: #333;
+					transition: background 500ms ease;
+				}
+				.btn:hover {
+					background: #f4f4f4;
+				}
+			</style>
+	</head>
+	
+	<body>
+	
+	<audio>
+		<source class="track" src="" type="audio/mpeg">
+	</audio>
+	
+		<div id='textBlock'>
+		</div>
+		<button class="btn" onclick='recordEnglish();'>Record English</button>
+		<button class="btn" onclick='recordAfrikaans();'>Record Afrikaans</button>
+		<button class="btn" onclick='recordZulu();'>Record Zulu</button>
+		<button class="btn" onclick='loremIpsum();'>Lorem Ipsum Generator</button>
+		<a href="/TTS.html" class="btn" id="PollyLink">Polly API</a>
+		</br></br>
+
+		<script type="text/javascript">
+				var r = document.getElementById('textBlock');
+				r.innerHTML = 'Hello World';
+
+				function loremIpsum() {
+					r.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+				}
+
+				function recordEnglish() {
+					if (!('webkitSpeechRecognition' in window)) {
+						r.innerHTML = 'Unfortunately, your browser is not supported. Please use Google Chrome';
+					} else {
+							var speechRecognizer = new webkitSpeechRecognition();{
+							speechRecognizer.continuous = false;
+							speechRecognizer.interimResults = false;
+							speechRecognizer.lang = 'en-ZA';
+							speechRecognizer.start();
+							var interimTranscripts = 	'';
+							var finalTranscripts 	=		'';
+								speechRecognizer.onresult = function(event) {
+								for (var i = event.resultIndex; i < event.results.length; i++) {
+
+												if (event.results[i].isFinal) {
+														finalTranscripts 		+= event.results[i][0].transcript;
+												} else {
+														interimTranscripts 	+= event.results[i][0].transcript;
+													}
+												r.innerHTML = finalTranscripts;
+											}
+								};
+						}
+					}
+				}
+
+				function recordAfrikaans() {
+					if (!('webkitSpeechRecognition' in window)) {
+						r.innerHTML = 'Unfortunately, your browser is not supported. Please use Google Chrome';
+					} else {
+							var speechRecognizer = new webkitSpeechRecognition();{
+							speechRecognizer.continuous = false;
+							speechRecognizer.interimResults = false;
+							speechRecognizer.lang = 'af-ZA';
+							speechRecognizer.start();
+							var interimTranscripts = 	'';
+							var finalTranscripts 	=		'';
+								speechRecognizer.onresult = function(event) {
+								for (var i = event.resultIndex; i < event.results.length; i++) {
+
+												if (event.results[i].isFinal) {
+														finalTranscripts 		+= event.results[i][0].transcript;
+												} else {
+														interimTranscripts 	+= event.results[i][0].transcript;
+													}
+												r.innerHTML = finalTranscripts;
+											}
+								};
+						}
+					}
+				}
+
+				function recordZulu() {
+					if (!('webkitSpeechRecognition' in window)) {
+						r.innerHTML = 'Unfortunately, your browser is not supported. Please use Google Chrome';
+					} else {
+							var speechRecognizer = new webkitSpeechRecognition();{
+							speechRecognizer.continuous = false;
+							speechRecognizer.interimResults = false;
+							speechRecognizer.lang = 'zu-ZA';
+							speechRecognizer.start();
+							var interimTranscripts = 	'';
+							var finalTranscripts 	=		'';
+								speechRecognizer.onresult = function(event) {
+								for (var i = event.resultIndex; i < event.results.length; i++) {
+
+												if (event.results[i].isFinal) {
+														finalTranscripts 		+= event.results[i][0].transcript;
+												} else {
+														interimTranscripts 	+= event.results[i][0].transcript;
+													}
+												r.innerHTML = finalTranscripts;
+											}
+								};
+						}
+					}
+				}
+				
+		</script>
+		
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.132.0.min.js"></script>
+		<script src="js/STT.js"></script>		
+		
+	</body>
+
+</html>

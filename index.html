@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+       <meta name="description" content="Demo Project">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="css/style.css">
+       <style type="text/css"></style>
+	<title>Mismail.Info Homepage</title>
+   </head>
+
+   <body>
+   
+   <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{SpeechAPI}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{3.2}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
+
+<main>
+	<div id="landing">
+		<div id="landing-text">
+			<div id="landing-text-inner">
+				<h1>Silly Speeches</h1>
+				</br>
+				<h2>Speech functionality API's</h2>
+				<a href="STT.html" class="btn" id="STT">Speech To Text</a>
+				<a href="TTS.html" class="btn" id="TTS">Text To Speech</a>
+			</div>
+		</div>
+		<div id="landing-image"></div>
+	</div>
+</main>
+	
+<footer>
+	<h3>Mohamed Ismail</h3>
+	<p>Email:  <strong>my.id.alias@gmail.com</strong> | Phone:  <strong>+27834184392</strong></p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"</script>
+<script src="js/main.js"</script>
+
+   </body>
+ </html>
