@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
  <html>
    <head>
@@ -12,32 +13,6 @@
 
    <body>
    
-   <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{SpeechAPI}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{3.2}'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<fb:login-button 
-  scope="public_profile,email"
-  onlogin="checkLoginState();">
-</fb:login-button>
-
 <main>
 	<div id="landing">
 		<div id="landing-text">
@@ -47,6 +22,7 @@
 				<h2>Speech functionality API's</h2>
 				<a href="STT.html" class="btn" id="STT">Speech To Text</a>
 				<a href="TTS.html" class="btn" id="TTS">Text To Speech</a>
+				<a href="combo.html" class="btn" id="comboBtn">combo</a>
 			</div>
 		</div>
 		<div id="landing-image"></div>

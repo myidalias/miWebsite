@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css\tts.css">
+  </head>
+
+  <body>
+    <div id="content">
+	</br></br>
+	
+	<input type="submit" value="Record Speech-To-Text" id="recordButton" class="buttons">
+	</br></br>
+    
+	<textarea id ="postText"></textarea>
+    <span id="charCounter">Characters: 0</span>
+	</br></br>
+	
+	Voice:
+    <select id="voiceSelected">
+        <option value="Joanna">Joanna (American Female)</option>
+        <option value="Matthew">Matthew (American Male)</option>
+        <option value="Brian">Brian (British Male)</option>
+        <option value="Emma">Emma (British Female)</option>
+        <option value="Raveena">Raveena (Indian Female)</option>
+        <option value="Aditi">Aditi (Indian Female)</option>
+        <option value="Russell">Russell (Australian Male)</option>
+    </select>
+	<input type="submit" value="Generate Text-To-Speech" id="sayButton" class="buttons">
+    </br></br>
+
+	<span id="postIDreturned"></span></br>
+    insert Post ID --> <input type="text" id="postId"> <input type="submit" class="buttons" value="Get File" id="searchButton">
+	</br></br>
+    </div>
+
+      <table id="posts">
+        <colgroup>
+          <col style="width:100%">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th></th>
+          </tr>
+        </tbody>
+      </table>
+
+    <script src="js/TTS.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+  </body>
+</html>

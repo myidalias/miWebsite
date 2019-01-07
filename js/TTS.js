@@ -57,3 +57,31 @@ document.getElementById("postText").onkeyup = function(){
 	var length = $(postText).val().length;
 	document.getElementById("charCounter").textContent="Characters: " + length;
 }
+
+var r = document.getElementById('postText');
+r.innerHTML = 'insert text here';
+document.getElementById("recordButton").onclick = function(){
+					if (!('webkitSpeechRecognition' in window)) {
+						r.innerHTML = 'Unfortunately, your browser is not supported. Please use Google Chrome';
+					} else {
+							r.innerHTML = 'its recording...';
+							var speechRecognizer = new webkitSpeechRecognition();{
+							speechRecognizer.continuous = false;
+							speechRecognizer.interimResults = false;
+							speechRecognizer.lang = 'en-ZA';
+							speechRecognizer.start();
+							var interimTranscripts = 	'';
+							var finalTranscripts 	=		'';
+								speechRecognizer.onresult = function(event) {
+								for (var i = event.resultIndex; i < event.results.length; i++) {
+												if (event.results[i].isFinal) {
+														finalTranscripts 		+= event.results[i][0].transcript;
+												} else {
+														interimTranscripts 	+= event.results[i][0].transcript;
+													}
+												r.innerHTML = finalTranscripts;
+											}
+								};
+						}
+					}
+				}	
