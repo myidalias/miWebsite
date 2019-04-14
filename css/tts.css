@@ -1,3 +1,4 @@
+
 .buttons {
 	border : solid 0px #e6b215;
 	border-radius : 1rem;
@@ -12,6 +13,48 @@
 .buttons:hover {
 	background-color:#ffc477;
 }
+
+
+#landing-image {			
+  background-image: url("../aws-cloud.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 10rem;
+  flex: 0 1 50vw;
+  margin: 0;
+}
+
+#ending-image {			
+  background-image: url("../aws-boxes.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 5rem;
+  flex: 35 35 35vw;
+  margin: 0;
+}
+
+#architecture-image-1 {			
+  background-image: url("../AWS Polly HTTP POST request.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 50rem;
+  flex: 35 35 35vw;
+  margin: 0;
+}
+
+#architecture-image-2 {			
+  background-image: url("../AWS Polly HTTP GET request.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 50rem;
+  flex: 35 35 35vw;
+  margin: 0;
+}
+
 
 .buttons:active {
 	position:relative;
@@ -31,6 +74,16 @@ textarea {
 }
 
 #content {
+  width: 90% ;
+  margin-left: auto ;
+  margin-right: auto;
+	margin-bottom: 10px;
+	font-family:verdana, sans-serif;
+	word-spacing:4pt;
+	font-size:14px;
+}
+
+#the-end {
   width: 90% ;
   margin-left: auto ;
   margin-right: auto;

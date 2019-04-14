@@ -10,7 +10,7 @@
 			<title>Speech-To-Text converter</title>
 			<body background="background.png">
 			<center><img src="https://blog.flamingtext.com/blog/2018/11/09/flamingtext_com_1541797418_799131671.png" border="0"></center>
-			
+
 			<style type="text/css">
 				body{
 					font-family: verdana;
@@ -42,20 +42,20 @@
 				}
 			</style>
 	</head>
-	
+
 	<body>
-	
+
 	<audio>
 		<source class="track" src="" type="audio/mpeg">
 	</audio>
-	
+
 		<div id='textBlock'>
 		</div>
+		<button class="btn" onclick='loremIpsum();'>Lorem Ipsum Generator</button>
 		<button class="btn" onclick='recordEnglish();'>Record English</button>
 		<button class="btn" onclick='recordAfrikaans();'>Record Afrikaans</button>
 		<button class="btn" onclick='recordZulu();'>Record Zulu</button>
-		<button class="btn" onclick='loremIpsum();'>Lorem Ipsum Generator</button>
-		<a href="/TTS.html" class="btn" id="PollyLink">Polly API</a>
+		<button class="btn" onclick='test();'>Continuous Recording</button>
 		</br></br>
 
 		<script type="text/javascript">
@@ -143,16 +143,43 @@
 						}
 					}
 				}
-				
+
+				function test() {
+					if (!('webkitSpeechRecognition' in window)) {
+						r.innerHTML = 'Unfortunately, your browser is not supported. Please use Google Chrome';
+					} else {
+							var speechRecognizer = new webkitSpeechRecognition();{
+							speechRecognizer.continuous = true;
+							speechRecognizer.interimResults = true;
+							speechRecognizer.lang = 'en-ZA';
+							speechRecognizer.start();
+							var interimTranscripts = 	'';
+							var finalTranscripts 	=		'';
+								speechRecognizer.onresult = function(event) {
+								for (var i = event.resultIndex; i < event.results.length; i++) {
+
+												if (event.results[i].isFinal) {
+														finalTranscripts 		+= event.results[i][0].transcript;
+												} else {
+														interimTranscripts 	+= event.results[i][0].transcript;
+													}
+												r.innerHTML = finalTranscripts;
+											}
+								};
+						}
+					}
+				}
+
+
 		</script>
-		
+
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
 		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.132.0.min.js"></script>
-		<script src="js/STT.js"></script>		
-		
+		<script src="js/STT.js"></script>
+
 	</body>
 
 </html>

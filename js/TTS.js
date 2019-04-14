@@ -1,7 +1,8 @@
 var API_ENDPOINT = "https://qzagekccr9.execute-api.us-east-1.amazonaws.com/dev"
 
-document.getElementById("sayButton").onclick = function(){
 
+
+document.getElementById("sayButton").onclick = function(){
 	var inputData = {
 		"voice": $('#voiceSelected option:selected').val(),
 		"text" : $('#postText').val()
@@ -14,6 +15,7 @@ document.getElementById("sayButton").onclick = function(){
 	      contentType: 'application/json; charset=utf-8',
 	      success: function (response) {
 					document.getElementById("postIDreturned").textContent="Post ID: " + response;
+					
 	      },
 	      error: function () {
 	          alert("error");
