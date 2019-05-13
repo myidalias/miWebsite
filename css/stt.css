@@ -3,14 +3,9 @@
 body {
   font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
+  background: black;
+  color: lime;
   height: auto;
-  color: navy;
-  background-image: url("http://source.unsplash.com/1920x1080/?minimalist,blanc,white"); /* The image used */
-  background-color: #efefef; /* Used if the image is unavailable */
-  height: 35rem; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 h1 {
@@ -28,12 +23,12 @@ h2 {
 }
 
 img {
-  display: block;
-  width: 100%;
+  display: flex;
+  width: 30%;
 }
 
 main {
-  max-width: 900px;
+  max-width: 50rem;
   margin: auto;
   box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.65),
     -30px 0px 40px rgba(0, 0, 0, 0.65);

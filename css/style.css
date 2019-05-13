@@ -37,8 +37,6 @@ h4 {
 }
 
 
-
-
 img {
   display: flex;
   width: 100%;
@@ -61,8 +59,8 @@ main {
 
 #landing-text {
   display: flex;
-  flex: 0 1 40vw;
-  height: 40vh;
+  flex: 0 1 70vw;
+  height: 70vh;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -80,7 +78,28 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  flex: 0 1 60vw;
+  flex: 1 1 60vw;
+  margin: 0;
+}
+
+
+#sandbox-image {			
+  background-image: url("https://cdn-images-1.medium.com/max/2600/1*_3CrsHhDOtcCxYrP1gJZxw.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  flex: 1 0 60vw;
+  margin: 0;
+}
+
+#js-image {			
+  background-image: url("https://lh3.googleusercontent.com/JEMCHNsSdR6x4wU1cOuZ9WO11GqX_dv11CgSAFt5w62tuDJX1wyPyRB5NckwpkbllZ8");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  flex: 1 0 43vw;
   margin: 0;
 }
 
